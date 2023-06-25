@@ -1,9 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PrivateChatDto } from 'src/app/models/chat/private-chat-dto.model';
-import { User } from 'src/app/models/user.model';
+import { UserDto } from 'src/app/models/users/user-dto.model';
 import { formatDistanceToNow, isYesterday, isToday } from 'date-fns';
-import { PrivateMessageService } from 'src/app/service/private-message/private-message.service';
+import { PrivateMessageService } from 'src/app/services/private-message/private-message.service';
 import { PrivateMessageDto } from 'src/app/models/messages/private-message-dto';
+
+
 
 @Component({
   selector: 'app-chat-list',
@@ -43,7 +45,7 @@ export class ChatListComponent implements OnInit {
   }
 
   getOtherUserProfileImage(chat: PrivateChatDto): string {
-    let otherUser: User;
+    let otherUser: UserDto;
     if (chat.user1.id !== this.currentUserId) {
       otherUser = chat.user1;
     } else {

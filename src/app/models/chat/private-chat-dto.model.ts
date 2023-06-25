@@ -1,5 +1,6 @@
 import { PrivateMessageDto } from "../messages/private-message-dto";
-import { UserDto } from "../users/user-dto";
+import { UserDto } from "../users/user-dto.model";
+
 
 export interface PrivateChatDto {
     id: number;

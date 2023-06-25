@@ -1,1 +1,76 @@
-<p>profile works!</p>
+<div *ngIf="user">
+  <mat-card class="profile-card">
+    <div class="cover-photo"></div>
+    <div class="profile-container">
+      <div class="profile-pic-container">
+        <img [src]="user.profileImage" class="profile-pic" alt="Profile Picture">
+
+        <!--  <button mat-icon-button class="change-photo-button" aria-label="Cambiar foto" (click)="fileInput.click()">
+          <mat-icon>camera_alt</mat-icon>
+          <input type="file" #fileInput style="display: none" (change)="handleFileInput($event)">
+        </button>-->
+
+
+
+      </div>
+      <div class="profile-details">
+        <p class="name">{{user.name}} {{user.lastName}}</p>
+      </div>
+    </div>
+
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Información">
+          <div class="tab-content">
+            <mat-list class="info-list">
+              <mat-list-item>
+                <div class="info-row">
+                  <p class="info-label white-text">Nombre:</p>
+                  <p class="info-value white-text">{{user.name}}</p>
+                </div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+              <mat-list-item>
+                <div class="info-row">
+                  <p class="info-label white-text">Apellido:</p>
+                  <p class="info-value white-text">{{user.lastName}}</p>
+                </div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+              <mat-list-item>
+                <div class="info-row">
+                  <p class="info-label white-text">Correo:</p>
+                  <p class="info-value white-text">{{user.email}}</p>
+                </div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+              <mat-list-item>
+                <div class="info-row">
+                  <p class="info-label white-text">Universidad:</p>
+                  <p class="info-value white-text">{{user.student.college}}</p>
+                </div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+              <mat-list-item>
+                <div class="info-row">
+                  <p class="info-label white-text">Carrera:</p>
+                  <p class="info-value white-text">{{user.student.career}}</p>
+                </div>
+              </mat-list-item>
+              <mat-list-item>
+                <div class="info-row">
+                  <p class="info-label white-text">Correo Universitario:</p>
+                  <p class="info-value white-text">{{user.student.universityEmail}}</p>
+                </div>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Mis publicaciones">
+          <app-publications></app-publications>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

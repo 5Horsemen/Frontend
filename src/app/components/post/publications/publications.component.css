@@ -1,0 +1,293 @@
+.post {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.post-card {
+  max-width: 800px;
+  margin: 30px;
+  background-color: rgb(47, 47, 49);
+  color: #e4e6eb;
+  border-radius: 15px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.author {
+  font-weight: bold;
+  margin-right: 10px;
+  color: white;
+}
+
+mat-card-subtitle {
+  color: white;
+}
+
+.published-date {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.author .career,
+.author .college {
+  font-size: 14px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.left-actions {
+  display: flex;
+}
+
+.right-actions {
+  display: flex;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.action-button {
+  flex-basis: calc(
+    33.33% - 20px
+  ); /* Ajusta el valor del espacio entre botones según tus preferencias */
+  display: flex;
+  align-items: center;
+  margin: 10px; /* Ajusta el valor del margen entre los botones según tus preferencias */
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.post-content p {
+  text-align: justify;
+  margin: 15px 15px;
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Agregado: Centra el contenido horizontalmente */
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(217, 212, 212);
+  margin-top: 1px; /* Ajusta el espaciado superior según tus preferencias */
+  margin-bottom: 1px; /* Ajusta el espaciado inferior según tus preferencias */
+  transition: background-color 0.3s; /* Agregado: Transición suave del color de fondo */
+}
+.menu-button:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Agregado: Cambia el color de fondo al pasar el cursor */
+}
+
+.post-actions {
+  display: flex;
+  justify-content: center; /* Agregado: Centra los botones al medio */
+  align-items: center; /* Agregado: Centra los botones al medio */
+  flex-wrap: wrap; /* Agregado: Envuelve los botones en caso de que haya muchos */
+}
+
+.left-actions,
+.right-actions {
+  flex: 10; /* Agregado: Distribuye el espacio de manera uniforme */
+  display: flex;
+  justify-content: center; /* Agregado: Centra los iconos al medio */
+  align-items: center; /* Agregado: Centra los iconos al medio */
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5px;
+  margin-top: 1px; /* Agregado: Espaciado superior entre los botones */
+  margin-bottom: 1px; /* Agregado: Espaciado inferior entre los botones */
+}
+
+@keyframes likeAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+.menu-button .like-icon {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.menu-button.clicked .like-icon {
+  animation-name: likeAnimation;
+}
+
+.menu-button.clicked .like-icon.blue {
+  color: #003c98 !important;
+}
+.custom-divider {
+  background-color: white;
+  height: 0.002mm;
+  margin: 1px 10px;
+}
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*comentarios */
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.profile-pic {
+  margin-right: 10px;
+}
+
+.input-wrapper {
+  flex-grow: 1;
+}
+
+.comment-input {
+  display: flex;
+  align-items: center;
+}
+
+.comment-input form {
+  position: relative;
+  width: 100%;
+}
+
+.input-icons {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-70%);
+  margin-left: 5px;
+  color: black;
+}
+
+.input-icons button {
+  margin-left: 5px;
+  background-color: transparent;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+/*COmentarios*/
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(36, 37, 39, 255);
+  color: #000000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  margin-right: 10px;
+  align-self: flex-start;
+}
+
+.comment-card-cont {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(58, 59, 61, 255);
+  color: #f6efef;
+  padding: 10px;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-content {
+  margin-top: 10px;
+  word-break: break-word; /* Añade este estilo para que el contenido se ajuste correctamente */
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.comment-actions button {
+  color: #faf8f8;
+}
+
+.comment-actions button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/*foto*/
+.selected-photo-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.selected-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.remove-button {
+  color: black;
+  background-color: #d5d3d3;
+}
