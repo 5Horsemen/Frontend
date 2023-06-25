@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PrivateMessageDto } from 'src/app/models/messages/private-message-dto';
-import { User } from 'src/app/models/user.model';
+import { UserDto } from 'src/app/models/users/user-dto.model';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { User } from 'src/app/models/user.model';
 export class MessageBubbleComponent implements OnInit {
   @Input() message!: PrivateMessageDto;
   @Input() isSent!: boolean;
-  @Input() user!: User | null;
+  @Input() user!: UserDto | null;
 
   constructor() { }
 

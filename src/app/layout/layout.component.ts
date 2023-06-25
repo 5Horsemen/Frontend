@@ -8,8 +8,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { DialogSignOffComponent } from 'src/app/components/dialog-sign-off/dialog-sign-off.component';
 import { DialogChangePasswordComponent } from 'src/app/components/dialog-change-password/dialog-change-password.component';
 import { DialogChangeEmailComponent } from 'src/app/components/dialog-change-email/dialog-change-email.component';
-import { UserService } from 'src/app/service/user.service';
-import { AuthService } from 'src/app/service/auth.service';
+import { UserService } from '../services/users/user.service';
+import { AuthService } from '../services/auth/auth.service';
+
 @UntilDestroy()
 @Component({
   selector: 'app-layout',
@@ -20,16 +21,13 @@ export class LayoutComponent implements AfterViewInit {
   @ViewChild('sidenav') sidenav!: MatSidenav;
   @ViewChild('rightSidenav') rightSidenav!: MatSidenav;
 
-
-
-
   email?: string;
   password?: string;
   newPassword?: string;
   rePassword?: string;
   userName: string = '';
 
-  constructor(private observer: BreakpointObserver, private router: Router, public dialog: MatDialog,private userService: UserService,private authService: AuthService) { }
+  constructor(private observer: BreakpointObserver, private router: Router, public dialog: MatDialog, private userService: UserService, private authService: AuthService) { }
 
   ngOnInit(): void {
 
@@ -80,7 +78,9 @@ export class LayoutComponent implements AfterViewInit {
 
 
 
-  openDialogChangePassword(){
+
+  openDialogChangePassword() {
+
     const dialogRef = this.dialog.open(DialogChangePasswordComponent, {
       width: '400px',
       data: {
@@ -91,7 +91,8 @@ export class LayoutComponent implements AfterViewInit {
     })
   }
 
-  openDialogSignOff(){
+
+  openDialogSignOff() {
     this.authService.logout();
     const dialogRef = this.dialog.open(DialogSignOffComponent, {
       width: '400px'
@@ -99,7 +100,8 @@ export class LayoutComponent implements AfterViewInit {
   }
 
 
-  openDialogChangeEmail(){
+  openDialogChangeEmail() {
+
     const dialogRef = this.dialog.open(DialogChangeEmailComponent, {
       width: '400px'
     })

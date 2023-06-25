@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { UserDto } from 'src/app/models/user-dto.model';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UserDto } from 'src/app/models/users/user-dto.model';
+
 @Component({
   selector: 'app-dialog-change-password',
   templateUrl: './dialog-change-password.component.html',

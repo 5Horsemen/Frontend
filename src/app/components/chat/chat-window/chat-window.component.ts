@@ -2,8 +2,9 @@ import { ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnInit, Vie
 import { PrivateChatDto } from 'src/app/models/chat/private-chat-dto.model';
 import { GroupedMessages } from 'src/app/models/messages/grouped-messages.model';
 import { PrivateMessageDto } from 'src/app/models/messages/private-message-dto';
-import { User } from 'src/app/models/user.model';
-import { PrivateMessageService } from 'src/app/service/private-message/private-message.service';
+import { UserDto } from 'src/app/models/users/user-dto.model';
+import { PrivateMessageService } from 'src/app/services/private-message/private-message.service';
+
 
 @Component({
   selector: 'app-chat-window',
@@ -15,7 +16,7 @@ export class ChatWindowComponent implements OnInit, OnChanges {
   @Input() selectedChat: PrivateChatDto | null = null;
   @Input() currentUserId!: number;
   chatMessages: PrivateMessageDto[] = [];
-  @Input() displayedUser!: User | null;
+  @Input() displayedUser!: UserDto | null;
   @ViewChild('scrollMe', { static: false }) public myScrollContainer!: ElementRef;
   scrollToBottomEnabled: boolean = false;
   groupedChatMessages: GroupedMessages[] = [];
@@ -83,7 +84,7 @@ export class ChatWindowComponent implements OnInit, OnChanges {
   }
 
 
-  getUserFromMessage(message: PrivateMessageDto): User {
+  getUserFromMessage(message: PrivateMessageDto): UserDto {
     return message.sender.id === this.currentUserId ? message.recipient : message.sender;
   }
 

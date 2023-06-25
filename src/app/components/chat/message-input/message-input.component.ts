@@ -2,7 +2,7 @@ import { Component, Input, ElementRef, ViewChild, HostListener } from '@angular/
 import { EmojiEvent } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 import { PrivateChatDto } from 'src/app/models/chat/private-chat-dto.model';
 import { CreatePrivateMessageDto } from 'src/app/models/messages/create-private-message-dto';
-import { PrivateMessageService } from 'src/app/service/private-message/private-message.service';
+import { PrivateMessageService } from 'src/app/services/private-message/private-message.service';
 
 @Component({
   selector: 'app-message-input',

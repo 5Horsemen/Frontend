@@ -1,0 +1,75 @@
+<mat-card class="create-publication-card">
+    <div class="user-profile">
+        <img [src]="profilePicture" alt="Profile Picture" class="profile-pic">
+        <button mat-fab extended class="DatoInput" (click)="openPublicationCard()">
+            ¿Qué estás pensando, {{userName}}?
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="example-button-row">
+        <button mat-button>
+            <mat-icon class="LiveVideo">videocam</mat-icon>
+            Live Video
+        </button>
+        <button mat-button>
+            <mat-icon class="PhotoVideo">photo_library</mat-icon>
+            Photo/Video
+        </button>
+        <button mat-button>
+            <mat-icon class="feeling">emoji_emotions</mat-icon>
+            feeling/activity
+        </button>
+    </div>
+
+    <div *ngIf="showPublicationCard" class="publication-overlay" (click)="onOverlayClick($event)">
+        <div class="publication-card">
+            <div class="card-header">
+                <h2 class="card-title">Crear publicación</h2>
+                <button mat-icon-button class="close-button" (click)="closePublicationCard()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="card-body">
+                <textarea [(ngModel)]="publicationText" placeholder="¿Qué estás pensando, {{userName}}?"></textarea>
+                <div class="add-image">
+                    <span>Agrega a tu publicación</span>
+                    <input type="file" id="file-input" style="display: none" (change)="handleFileInput($event)">
+                    <label for="file-input" mat-icon-button class="image-button">
+                        <mat-icon>image</mat-icon>
+                    </label>
+                    <button mat-icon-button class="person-button" (click)="addImage()">
+                        <mat-icon>person_add</mat-icon>
+                    </button>
+                    <button mat-icon-button class="place-button" (click)="addImage()">
+                        <mat-icon>place</mat-icon>
+                    </button>
+                    <button mat-icon-button class="feeling-button" (click)="addImage()">
+                        <mat-icon>emoji_emotions</mat-icon>
+                    </button>
+                </div>
+                <div class="selected-images">
+                    <div *ngFor="let file of selectedFiles" class="selected-image">
+                        <ng-container *ngIf="isImageFile(file)">
+                            <img [src]="getFileUrl(file)" alt="Selected Image">
+                        </ng-container>
+                        <ng-container *ngIf="!isImageFile(file)">
+                            <mat-icon>folder</mat-icon>
+                            <span>{{ file.name }}</span>
+                        </ng-container>
+                        <button mat-icon-button class="remove-button"
+                            (click)="removeFile(file); $event.stopPropagation()">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="card-footer">
+                <button mat-button class="publish-button" [disabled]="!publicationText"
+                    (click)="publish()">Publicar</button>
+            </div>
+        </div>
+    </div>
+</mat-card>
