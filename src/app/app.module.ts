@@ -7,6 +7,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './views/login/login.component';
 import {RegisterStudentComponent} from "./views/registers/register-student/register-student.component";
 import {RegisterEmployerComponent} from "./views/registers/register-employer/register-employer.component";
+import { LayoutComponent } from './layout/layout/layout.component';
+import { DialogChangeEmailComponent } from './components/dialog-change-email/dialog-change-email.component';
+import { DialogChangePasswordComponent } from './components/dialog-change-password/dialog-change-password.component';
+import { DialogSignOffComponent } from './components/dialog-sign-off/dialog-sign-off.component';
+import {MaterialModule} from "./shared/material.module";
 
 @NgModule({
   declarations: [
@@ -15,11 +20,16 @@ import {RegisterEmployerComponent} from "./views/registers/register-employer/reg
     RegisterStudentComponent,
     RegisterEmployerComponent
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent,
+    DialogChangeEmailComponent,
+    DialogChangePasswordComponent,
+    DialogSignOffComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
