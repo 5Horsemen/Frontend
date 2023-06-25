@@ -15,7 +15,7 @@ export class DialogChangePasswordComponent implements OnInit {
   hide1 = true;
   hide2 = true;
   hide3 = true;
-  constructor(public dialogRef: MatDialogRef<DialogChangePasswordComponent>,@Inject(MAT_DIALOG_DATA) public data: User) { }
+  constructor(public dialogRef: MatDialogRef<DialogChangePasswordComponent>, @Inject(MAT_DIALOG_DATA) public data: UserDto) { }
 
   ngOnInit(): void {
   }

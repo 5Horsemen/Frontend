@@ -1,9 +1,11 @@
 import { Component, Input, AfterViewInit } from '@angular/core';
 import { CommentDto } from 'src/app/models/post/comment-dto.model';
+
 import { PostDto } from 'src/app/models/post/post-dto.model';
 import { UserDto } from 'src/app/models/users/user-dto.model';
 import { CommentService } from 'src/app/services/comment/comment.service';
 import { PostService } from 'src/app/services/post/post.service';
+
 import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
@@ -11,7 +13,6 @@ import { UserService } from 'src/app/services/users/user.service';
   templateUrl: './publications.component.html',
   styleUrls: ['./publications.component.css']
 })
-
 export class PublicationsComponent implements AfterViewInit {
 
   currentUserName: string = "";

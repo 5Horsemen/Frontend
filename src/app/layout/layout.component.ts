@@ -5,11 +5,11 @@ import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { delay, filter } from 'rxjs';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogSignOffComponent } from 'src/app/components/dialog-sign-off/dialog-sign-off.component';
 import { DialogChangePasswordComponent } from 'src/app/components/dialog-change-password/dialog-change-password.component';
-import { DialogChangeEmailComponent } from 'src/app/components/dialog-change-email/dialog-change-email.component';
 import { UserService } from '../services/users/user.service';
 import { AuthService } from '../services/auth/auth.service';
+import { DialogSignOffComponent } from '../components/dialog-sign-off/dialog-sign-off.component';
+import { DialogChangeEmailComponent } from '../components/dialog-change-email/dialog-change-email.component';
 
 @UntilDestroy()
 @Component({

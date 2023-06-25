@@ -6,15 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './views/login/login.component';
-import {RegisterStudentComponent} from "./views/registers/register-student/register-student.component";
-import {RegisterEmployerComponent} from "./views/registers/register-employer/register-employer.component";
-import { LayoutComponent } from './layout/layout/layout.component';
+import { RegisterStudentComponent } from "./views/registers/register-student/register-student.component";
 import { DialogChangeEmailComponent } from './components/dialog-change-email/dialog-change-email.component';
 import { DialogChangePasswordComponent } from './components/dialog-change-password/dialog-change-password.component';
-import { DialogSignOffComponent } from './components/dialog-sign-off/dialog-sign-off.component';
-import {MaterialModule} from "./shared/material.module";
-import { RegisterStudentComponent } from "./views/registers/register-student/register-student.component";
-import { LayoutComponent } from './layout/layout.component';
 import { DialogSignOffComponent } from './components/dialog-sign-off/dialog-sign-off.component';
 import { ChatHeaderComponent } from './components/chat/chat-header/chat-header.component';
 import { ChatListComponent } from './components/chat/chat-list/chat-list.component';
@@ -31,9 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserSearchDialogComponent } from './components/chat/user-search-dialog/user-search-dialog.component';
-import { PublicationsComponent } from './components/post/publications/publications.component';
 import { CreatePublicationComponent } from './components/post/create-publication/create-publication.component'
 import { DisplayDatePipe } from './pipes/display-date.pipe';
+import { LayoutComponent } from './layout/layout.component';
+import { PublicationsComponent } from './components/post/publications/publications.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +48,7 @@ import { DisplayDatePipe } from './pipes/display-date.pipe';
     EmojiPickerComponent,
     MessageBubbleComponent,
     MessageInputComponent,
-    UserSearchDialogComponent
+    UserSearchDialogComponent,
     PublicationsComponent,
     CreatePublicationComponent,
     DisplayDatePipe,

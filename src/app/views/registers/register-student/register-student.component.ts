@@ -20,7 +20,7 @@ export class RegisterStudentComponent implements OnInit {
     private formBuilder: FormBuilder,
     private apiService: ApiService,
     private http: HttpClient // Inyectar HttpClient en el constructor
-    ,private router: Router
+    , private router: Router
   ) { }
 
   ngOnInit(): void {
