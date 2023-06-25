@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ujobs-frontend": {
+      "hosting": {
+        "Frontend": [
+          "ujobs-frontend"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ujobs-frontend"
+  }
+}
