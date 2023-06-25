@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ApiService} from "../service/api.service";
-import {HttpClient} from "@angular/common/http";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
+import { ApiService } from 'src/app/services/users/api.service';
+
 @Component({
-  selector: 'app-register-employee',
-  templateUrl: './register-employee.component.html',
-  styleUrls: ['./register-employee.component.css']
+  selector: 'app-register-employer',
+  templateUrl: './register-employer.component.html',
+  styleUrls: ['./register-employer.component.css']
 })
 export class RegisterEmployerComponent {
   registerForm!: FormGroup;
 
   constructor(private snackBar: MatSnackBar,
-              private router: Router,
-              private formBuilder: FormBuilder,
-              private apiService: ApiService,
-              private http: HttpClient ) {}
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private http: HttpClient) { }
 
 
   ngOnInit(): void {

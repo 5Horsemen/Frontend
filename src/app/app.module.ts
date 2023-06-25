@@ -29,6 +29,8 @@ import { CreatePublicationComponent } from './components/post/create-publication
 import { DisplayDatePipe } from './pipes/display-date.pipe';
 import { LayoutComponent } from './layout/layout.component';
 import { PublicationsComponent } from './components/post/publications/publications.component';
+import { InboxComponent } from './views/inbox/inbox.component';
+import { RegisterEmployerComponent } from './views/registers/register-employer/register-employer.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { PublicationsComponent } from './components/post/publications/publicatio
     PublicationsComponent,
     CreatePublicationComponent,
     DisplayDatePipe,
+    InboxComponent,
+    RegisterEmployerComponent,
   ],
   imports: [
     BrowserModule,
