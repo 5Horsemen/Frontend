@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {AuthService} from "../../services/auth/auth.service";
-import {AuthenticationRequestDto} from "../../models/auth/authentication-request-dto.model";
+import { AuthService } from "../../services/auth/auth.service";
+import { AuthenticationRequestDto } from "../../models/auth/authentication-request-dto.model";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

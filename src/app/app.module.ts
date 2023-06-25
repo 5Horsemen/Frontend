@@ -81,9 +81,9 @@ import { MatIconModule } from '@angular/material/icon';
         tokenGetter: () => {
           return localStorage.getItem('access_token');
         },
-        allowedDomains: ['localhost:8080'], // Reemplaza con tu dominio
+        allowedDomains: ['localhost:8080', 'https://webservices-production-b2b7.up.railway.app'], // Reemplaza con tu dominio
         disallowedRoutes: ['http://localhost:8080/api/v1/account/login',
-          'http://localhost:8080/api/v1/account/register/student'] // Reemplaza con tus rutas
+          'http://localhost:8080/api/v1/account/register/student', 'https://webservices-production-b2b7.up.railway.app/api/v1/account/login', 'https://webservices-production-b2b7.up.railway.app/api/v1/account/register/student '] // Reemplaza con tus rutas
       }
     }),
     ReactiveFormsModule,

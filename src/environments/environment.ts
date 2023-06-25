@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    baseURL: 'http://localhost:8080/api/v1',
-    chatURL: 'http://localhost:8080'
+    baseURL: 'https://webservices-production-b2b7.up.railway.app/api/v1',
+    chatURL: 'https://webservices-production-b2b7.up.railway.app'
 };

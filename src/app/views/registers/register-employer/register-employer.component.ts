@@ -46,7 +46,7 @@ export class RegisterEmployerComponent {
       return;
     }
 
-    const registerUrl = 'http://localhost:8080/api/v1/account/register/student';
+    const registerUrl = 'https://webservices-production-b2b7.up.railway.app/api/v1/account/register/student';
 
     const requestData = {
       employer: {
@@ -73,6 +73,6 @@ export class RegisterEmployerComponent {
       }
     );
 
-    this.router.navigate(['/home']);
+    this.router.navigate(['/publications']);
   }
 }
