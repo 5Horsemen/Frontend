@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CreatePrivateChatDto } from 'src/app/models/chat/create-private-chat-dto';
 import { PrivateChatDto } from 'src/app/models/chat/private-chat-dto.model';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrivateChatService {
-  private readonly baseUrl = 'http://localhost:8080/api/v1/chats';
+  private readonly baseUrl = environment.baseURL + '/chats';
 
   constructor(private http: HttpClient) { }
 

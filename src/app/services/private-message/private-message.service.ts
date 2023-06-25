@@ -7,6 +7,8 @@ import { AuthService } from '../auth/auth.service';
 
 import { CreatePrivateMessageDto } from 'src/app/models/messages/create-private-message-dto';
 import * as SockJS from 'sockjs-client';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class PrivateMessageService {
   private client!: Client;
   private connected: boolean;
   public messages: Subject<PrivateMessageDto>;
-  public baseURL = 'http://localhost:8080';
+  public baseURL = environment.chatURL;
   private subscription: any;
 
   constructor(private http: HttpClient, private authService: AuthService) {

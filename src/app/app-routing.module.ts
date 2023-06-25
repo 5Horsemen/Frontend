@@ -9,42 +9,48 @@ import { RegisterEmployerComponent } from './views/registers/register-employer/r
 
 
 const routes: Routes = [
-
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login',
+    redirectTo: 'accounts/login',
   },
   {
-    path: 'login',
+    path: 'accounts/login',
     component: LoginComponent,
   },
   {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'accounts/register/student',
+    component: RegisterComponent,
   },
   {
-    path: 'profile/:id',
-    component: ProfileComponent,
+    path: 'accounts/selectRole',
+    component: SelectRoleComponent,
   },
   {
     path: 'accounts/register/employee',
-    component: RegisterEmployerComponent,
+    component: RegisterEmployeeComponent,
   },
   {
     path: 'home',
     component: LayoutComponent,
   },
   {
+    path: 'settings',
+    component: SettingsComponent,
+  },
+  {
     path: 'publications',
     component: PublicationsComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: 'messages',
     component: InboxComponent,
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
