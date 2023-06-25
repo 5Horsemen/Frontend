@@ -4,21 +4,22 @@
 }
 
 .sidebar {
-  flex: 0 0 400px; /* Ancho fijo de la barra lateral /
-  }
-  
-  .chat-container {
-    flex: 1 1 auto;
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .scroll-container {
-    max-height: 300px; / Altura máxima del contenedor con scroll /
-    overflow-y: auto; / Activar el scroll vertical */
+  flex: 0 0 400px; /* Ancho fijo de la barra lateral */
 }
+
+.chat-container {
+  flex: 1 1 auto;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.scroll-container {
+  max-height: 300px; /* Altura máxima del contenedor con scroll */
+  overflow-y: auto; /* Activar el scroll vertical */
+}
+
 
 .header-chat {
   flex: 0 0 auto;

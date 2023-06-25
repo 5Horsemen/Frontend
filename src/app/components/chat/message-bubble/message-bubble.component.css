@@ -15,14 +15,14 @@
 
 .message-sent {
   align-self: flex-end;
-  background-color: #d1ece1;
+  background-color: 	#075E54;
   margin-bottom: 5px;
   margin-right: 0px;
   margin-left: auto;
 }
 
 .message-received {
-  background-color: #f0f0f0;
+  background-color: #1f2c34;
   right: 5px;
 }
 
@@ -37,7 +37,7 @@
 
 .user-name {
   font-size: 1em;
-  color: purple;
+  color: #e59154;
   font-weight: bold;
   margin-top: 1px;
   padding-top: 10px;
