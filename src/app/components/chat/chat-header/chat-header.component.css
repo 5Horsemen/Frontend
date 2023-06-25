@@ -1,0 +1,35 @@
+.chat-header {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  border: 1px solid #2f3336;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: black;
+  min-width: 375px;
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  margin-left: 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+.actions {
+  margin-left: auto;
+  color: white;
+}
