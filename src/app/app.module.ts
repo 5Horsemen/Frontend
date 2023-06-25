@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserSearchDialogComponent } from './components/chat/user-search-dialog/user-search-dialog.component';
+import { PublicationsComponent } from './components/post/publications/publications.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,8 @@ import { UserSearchDialogComponent } from './components/chat/user-search-dialog/
     EmojiPickerComponent,
     MessageBubbleComponent,
     MessageInputComponent,
-    UserSearchDialogComponent
-
+    UserSearchDialogComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,
