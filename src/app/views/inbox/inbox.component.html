@@ -1,1 +1,32 @@
-<p>inbox works!</p>
+<div class="inbox">
+    <div class="sidebar">
+        <div class="header">
+            <app-chat-list-header (chatCreated)="handleChatCreated($event)"></app-chat-list-header>
+        </div>
+        <div class="search-bar">
+        </div>
+        <div class="chat-list-container">
+            <mat-card>
+                <mat-card-content class="chat-container-list">
+                    <div class="scroll-container">
+                        <app-chat-list [chats]="chats" (chatSelected)="selectChat($event)"
+                            [currentUserId]="currentUserId"></app-chat-list>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="header">
+            <app-chat-header *ngIf="selectedChat" [displayedUser]="displayedUser"></app-chat-header>
+        </div>
+        <div class="chat-window">
+            <app-chat-window *ngIf="selectedChat" [selectedChat]="selectedChat" [currentUserId]="currentUserId"
+                [displayedUser]="displayedUser"></app-chat-window>
+        </div>
+        <div class="message-input">
+            <app-message-input *ngIf="selectedChat" [selectedChat]="selectedChat"
+                [currentUserId]="currentUserId"></app-message-input>
+        </div>
+    </div>
+</div>

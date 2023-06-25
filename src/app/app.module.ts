@@ -33,7 +33,7 @@ import { InboxComponent } from './views/inbox/inbox.component';
 import { RegisterEmployerComponent } from './views/registers/register-employer/register-employer.component';
 import { SelectRoleComponent } from './views/select-role/select-role.component';
 import { SettingsComponent } from './views/settings/settings.component';
-import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [

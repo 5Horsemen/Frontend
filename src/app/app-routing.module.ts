@@ -6,9 +6,9 @@ import { InboxComponent } from './views/inbox/inbox.component';
 import { PublicationsComponent } from './components/post/publications/publications.component';
 import { LayoutComponent } from './layout/layout.component';
 import { RegisterEmployerComponent } from './views/registers/register-employer/register-employer.component';
-import {SelectRoleComponent} from "./views/select-role/select-role.component";
-import {RegisterStudentComponent} from "./views/registers/register-student/register-student.component";
-import {SettingsComponent} from "./views/settings/settings.component";
+import { SelectRoleComponent } from "./views/select-role/select-role.component";
+import { RegisterStudentComponent } from "./views/registers/register-student/register-student.component";
+import { SettingsComponent } from "./views/settings/settings.component";
 
 
 const routes: Routes = [
