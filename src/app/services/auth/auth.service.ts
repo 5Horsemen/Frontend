@@ -6,6 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { StudentRegistrationRequest } from 'src/app/models/registration/student-registration-request.model';
 import { AuthenticationResponseDto } from 'src/app/models/auth/authentication-response-dto.model';
 import { AuthenticationRequestDto } from 'src/app/models/auth/authentication-request-dto.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ import { AuthenticationRequestDto } from 'src/app/models/auth/authentication-req
 export class AuthService {
 
   private _isAuthenticated = new BehaviorSubject<boolean>(false);
-  private apiUrl = 'http://localhost:8080/api/v1/account';
+  private apiUrl = environment.baseURL + '/account';
   private accessTokenKey = 'access_token';
   private refreshTokenKey = 'refresh_token';
 
