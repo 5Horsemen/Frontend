@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
     imports: [
@@ -44,7 +45,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatGridListModule,
         MatTooltipModule,
         MatMenuModule,
-
+        MatCheckboxModule,
+        MatIconModule,
 
     ],
     exports: [
@@ -69,7 +71,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatGridListModule,
         MatTooltipModule,
         MatMenuModule,
-
+        MatCheckboxModule,
+        MatIconModule,
     ],
 
 })

@@ -1,7 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { StudentService } from 'src/app/services/users/students.service';
+
 import { StudentDto } from 'src/app/models/users/student-dto.model';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 
 @Component({
