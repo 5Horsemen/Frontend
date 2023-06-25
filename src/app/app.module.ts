@@ -34,6 +34,8 @@ import { RegisterEmployerComponent } from './views/registers/register-employer/r
 import { SelectRoleComponent } from './views/select-role/select-role.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     CommonModule,
     MatMenuModule,
     HttpClientModule,
+    MatIconModule,
     PickerModule,
     JwtModule.forRoot({
       config: {

@@ -9,7 +9,6 @@ import { CreatePrivateMessageDto } from 'src/app/models/messages/create-private-
 import * as SockJS from 'sockjs-client';
 import { environment } from 'src/environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +32,7 @@ export class PrivateMessageService {
 
   initializeWebSocketConnection(): void {
     const token = localStorage.getItem('access_token');
-    const socket = new SockJS(`http://localhost:8080/ws?token=${token}`);
+    const socket = new SockJS(this.baseURL + `/ws?token=${token}`);
     this.client = new Client({
       webSocketFactory: () => socket,
       onConnect: (frame) => {
