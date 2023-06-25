@@ -1,8 +1,8 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-
-import { StudentDto } from 'src/app/models/users/student-dto.model';
 import { AuthService } from 'src/app/services/auth/auth.service';
-
+import { UserService } from 'src/app/services/users/user.service';
+import { UserDto } from 'src/app/models/users/user-dto.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -11,31 +11,34 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class ProfileComponent {
   @ViewChild('fileInput', { static: true }) fileInput!: ElementRef<HTMLInputElement>;
-  selectedPhoto: string = '';
-  profilePic: string = "";
-  
-  student: StudentDto | undefined ;
-  constructor(private studentservice: StudentService,private authService: AuthService) { }
-  ngOnInit(): void {
-    const userId = this.authService.getUserIdFromToken(); // Obtener el ID del usuario autenticado
-    console.log(userId);
-    if (userId) {
-      this.getUserDetails(userId);
-    }
-  }
 
-  getUserDetails(studentId: number): void {
-    this.studentservice.getStudentById(studentId).subscribe(
+  user!: UserDto;
+  constructor(private userService: UserService,private authService: AuthService, private route:ActivatedRoute) { }
+
+  loadUserProfile(userId: number){
+    this.userService.getUserById(userId).subscribe(
       (response: any) => {
-        this.student = response;
-        console.log(this.student);
+        this.user = response;
+        console.log(this.user);
       },
       (error: any) => {
         console.log(error);
       }
     );
-    
   }
+  ngOnInit(): void {
+    const userId = this.route.snapshot.params['id'];
+    console.log(userId);
+    if (userId) {
+      this.loadUserProfile(userId);
+    }
+    else{
+      const currentuserId = this.authService.getUserIdFromToken()
+      if(currentuserId)
+      this.loadUserProfile(currentuserId);
+    }
+  }
+
 
   openFileInput() {
     // Este método se encarga de abrir el cuadro de diálogo de selección de archivos
@@ -43,18 +46,5 @@ export class ProfileComponent {
     this.fileInput.nativeElement.click();
   }
 
-  handleFileInput(event: any) {
-    // Este método se ejecuta cuando se selecciona un archivo en el cuadro de diálogo
-    const file = event.target.files[0];
-    if (file) {
-      // Cargar y mostrar la nueva foto de perfil
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        this.selectedPhoto = e.target.result;
-        this.profilePic = this.selectedPhoto; // Actualizar la foto de perfil con la nueva imagen
-      };
-      reader.readAsDataURL(file);
-    }
-  }
 
 }
