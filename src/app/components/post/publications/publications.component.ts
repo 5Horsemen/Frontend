@@ -6,12 +6,12 @@ import { CommentService } from 'src/app/services/comment/comment.service';
 import { PostService } from 'src/app/services/post/post.service';
 import { UserService } from 'src/app/services/users/user.service';
 
-
 @Component({
   selector: 'app-publications',
   templateUrl: './publications.component.html',
   styleUrls: ['./publications.component.css']
 })
+
 export class PublicationsComponent implements AfterViewInit {
 
   currentUserName: string = "";

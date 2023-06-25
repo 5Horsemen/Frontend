@@ -1,0 +1,107 @@
+<mat-toolbar class="mat-elevation-z8">
+
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+
+  UJOBS:
+
+  <button mat-icon-button *ngIf="rightSidenav.mode === 'over'" (click)="rightSidenav.toggle() ">
+    <mat-icon *ngIf="!rightSidenav.opened" matBadge="15" matBadgeColor="warn">chat</mat-icon>
+    <mat-icon *ngIf="rightSidenav.opened">  chat_bubble_outline </mat-icon>
+  </button>
+
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img class="logo mat-elevation-z8" src="assets/UJOBSV1.png" />
+
+    <h3 class="name">UJOBS</h3>
+
+    <div style="display: grid; grid-template-rows: 1fr 3fr; height: 50vh;">
+      <div>
+        <button mat-button class="menu-button" routerLink="/publications">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/messages">
+          <mat-icon>group</mat-icon>
+          <span>Groups</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/Works">
+          <mat-icon>business_center</mat-icon>
+          <span>Works</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/proyects">
+          <mat-icon>folder_special</mat-icon>
+          <span>Proyects</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/settings">
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/profile">
+          <mat-icon>perm_identity</mat-icon>
+          <span>Profile</span>
+        </button>
+      </div>
+      <div style="align-self: end; justify-self: start;">
+        <button mat-button (click)="menuTrigger.openMenu()">
+          <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="Session"></div>
+          <div style="display: grid; grid-template-columns: 1fr 2fr; width: fit-content; height: 7vh;">
+            <div style="justify-self: center; align-self: center;">
+              <mat-icon>account_circle</mat-icon>
+            </div>
+
+
+
+
+
+
+
+            <div style="display: grid; justify-self: center; align-self: center;">
+              <span style="margin-bottom: -10px; color: white;">{{ userName }}</span>
+            </div>
+
+
+
+
+
+          </div>
+        </button>
+        <mat-menu #Session="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item [matMenuTriggerFor]="Profile">Profile Settings</button>
+          <button mat-menu-item (click)="openDialogSignOff()">Sign Off</button>
+        </mat-menu>
+        <mat-menu #Profile="matMenu" yPosition="above">
+          <button mat-menu-item (click)="openDialogChangeEmail()">Change Email address</button>
+          <button mat-menu-item (click)="openDialogChangePassword()">Change password</button>
+        </mat-menu>
+      </div>
+    </div>
+
+  </mat-sidenav>
+
+
+
+
+
+  <mat-sidenav #rightSidenav="matSidenav" position="end" class="custom-sidenav">
+    <h3 class="name">Mensaje</h3>
+
+    <div style="display: grid; grid-template-rows: 1fr 3fr; height: 50vh;">
+    </div>
+
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

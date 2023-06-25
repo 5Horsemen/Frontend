@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { StudentRegistrationRequest } from 'src/app/models/student-registration-request.model';
+import { StudentRegistrationRequest } from 'src/app/models/registration/student-registration-request.model';
 import { AuthenticationResponseDto } from 'src/app/models/auth/authentication-response-dto.model';
 import { AuthenticationRequestDto } from 'src/app/models/auth/authentication-request-dto.model';
 

@@ -78,7 +78,9 @@ export class LayoutComponent implements AfterViewInit {
 
 
 
+
   openDialogChangePassword() {
+
     const dialogRef = this.dialog.open(DialogChangePasswordComponent, {
       width: '400px',
       data: {
@@ -89,6 +91,7 @@ export class LayoutComponent implements AfterViewInit {
     })
   }
 
+
   openDialogSignOff() {
     this.authService.logout();
     const dialogRef = this.dialog.open(DialogSignOffComponent, {
@@ -98,6 +101,7 @@ export class LayoutComponent implements AfterViewInit {
 
 
   openDialogChangeEmail() {
+
     const dialogRef = this.dialog.open(DialogChangeEmailComponent, {
       width: '400px'
     })
