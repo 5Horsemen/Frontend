@@ -31,6 +31,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { PublicationsComponent } from './components/post/publications/publications.component';
 import { InboxComponent } from './views/inbox/inbox.component';
 import { RegisterEmployerComponent } from './views/registers/register-employer/register-employer.component';
+import { SelectRoleComponent } from './views/select-role/select-role.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { RegisterEmployerComponent } from './views/registers/register-employer/r
     DisplayDatePipe,
     InboxComponent,
     RegisterEmployerComponent,
+    SelectRoleComponent,
+    SettingsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -78,6 +84,7 @@ import { RegisterEmployerComponent } from './views/registers/register-employer/r
       }
     }),
     ReactiveFormsModule,
+    MatSlideToggleModule,
 
   ],
   providers: [],

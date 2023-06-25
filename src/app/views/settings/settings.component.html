@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="title">Configuración</h2>
+
+    <form [formGroup]="formGroup" (ngSubmit)="alertFormValues(formGroup)" class="example-form">
+
+      <div class="toggle-container">
+        <mat-icon class="icon" [ngClass]="{'active': formGroup.get('notifications')?.value}">
+          {{ iconName }}
+        </mat-icon>
+        <span class="notification-text">Notifications</span>
+        <mat-slide-toggle formControlName="notifications" (change)="toggleIcon()"></mat-slide-toggle>
+      </div>
+
+      <div class="toggle-container">
+        <mat-icon class="icon" [ngClass]="{'active': formGroup.get('darkMode')?.value}">
+          {{ darkModeIcon }}
+        </mat-icon>
+        <span class="notification-text">Dark Mode</span>
+        <mat-slide-toggle formControlName="darkMode" (change)="toggleDarkModeIcon()"></mat-slide-toggle>
+      </div>
+
+      <button mat-raised-button type="submit">Save Settings</button>
+
+    </form>
+
+  </mat-card-content>
+</mat-card>

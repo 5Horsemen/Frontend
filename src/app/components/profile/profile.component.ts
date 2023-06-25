@@ -13,6 +13,7 @@ export class ProfileComponent {
   @ViewChild('fileInput', { static: true }) fileInput!: ElementRef<HTMLInputElement>;
 
   user!: UserDto;
+
   constructor(private userService: UserService,private authService: AuthService, private route:ActivatedRoute) { }
 
   loadUserProfile(userId: number){
