@@ -1,0 +1,27 @@
+.chat-list-header {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: 64px;
+  border: 1px solid #2f3336;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.title {
+  font-weight: bold;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.icons {
+  margin-left: auto;
+  color: white;
+}
+
+.icon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: white;
+}

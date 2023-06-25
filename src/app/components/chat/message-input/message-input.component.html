@@ -1,0 +1,19 @@
+<mat-card-actions class="chat-input" style="position: relative;">
+    <button mat-icon-button (click)="toggleEmojiPicker()">
+        <mat-icon>sentiment_very_satisfied</mat-icon>
+    </button>
+    <div *ngIf="showEmojiPicker" class="emoji-picker">
+        <app-emoji-picker (emojiClick)="addEmoji($event)"></app-emoji-picker>
+    </div>
+    <mat-form-field appearance="fill" class="chat-input-field">
+        <mat-label>Aa</mat-label>
+        <textarea matInput [(ngModel)]="newMessage" rows="1" (input)="toggleSendButton()"
+            (keydown.enter)="sendMessage()" #messageInput></textarea>
+    </mat-form-field>
+    <button mat-icon-button color="primary" *ngIf="showSendButton" (click)="sendMessage()">
+        <mat-icon>send</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="!showSendButton" (click)="sendLike()">
+        <mat-icon>thumb_up_alt</mat-icon>
+    </button>
+</mat-card-actions>
