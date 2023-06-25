@@ -8,11 +8,18 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
+import {RegisterStudentComponent} from "./views/registers/register-student/register-student.component";
+import {RegisterEmployerComponent} from "./views/registers/register-employer/register-employer.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterStudentComponent,
+    RegisterEmployerComponent
+
+
   ],
   imports: [
     BrowserModule,
