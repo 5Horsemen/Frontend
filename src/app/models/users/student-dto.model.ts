@@ -1,8 +1,8 @@
-import { UserDto } from "./user-dto.model";
+import {UserDto} from "./user-dto.model";
 
 export interface StudentDto extends UserDto {
-    dni: string;
-    uEmail: string;
-    college: string;
-    career: string;
+  dni: string;
+  uEmail: string;
+  college: string;
+  career: string;
 }
