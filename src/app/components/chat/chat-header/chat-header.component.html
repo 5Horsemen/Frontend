@@ -1,0 +1,13 @@
+<mat-toolbar class="chat-header">
+    <div class="profile-picture">
+        <img [src]="getProfilePicture()" alt="profilePicture">
+    </div>
+    <span class="username">
+        {{ getChatUsername() }}
+    </span>
+    <div class="actions">
+        <button mat-icon-button matTooltip="Chat settings">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,5 @@
+<mat-card [ngClass]="{'message-sent': isSent, 'message-received': !isSent}" class="message-bubble">
+    <mat-card-header *ngIf="!isSent" class="user-name">{{ user?.name }}</mat-card-header>
+    <mat-card-content class="message-content">{{ message.content }}</mat-card-content>
+    <mat-card-footer class="timestamp">{{ message.sentDateTime | date:'shortTime' }}</mat-card-footer>
+</mat-card>

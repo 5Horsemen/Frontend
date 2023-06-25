@@ -1,0 +1,13 @@
+<mat-card [hidden]="!selectedChat" class="chat-window" id="chat-window">
+    <mat-card-content class="chat-messages" #scrollMe class="chat-messages scrollbar" (mouseenter)="showScrollbar()"
+        (mouseleave)="hideScrollbar()">
+        <div *ngFor="let groupedMessage of groupedChatMessages">
+            <div class="date">{{ groupedMessage.date | displayDate }}</div>
+            <div *ngFor="let message of groupedMessage.messages">
+                <app-message-bubble [message]="message" [isSent]="message.sender.id === currentUserId"
+                    [user]="getUserFromMessage(message)">
+                </app-message-bubble>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

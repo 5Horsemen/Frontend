@@ -1,0 +1,151 @@
+.search-dialog {
+  width: 600px;
+  height: 650px;
+  overflow-y: auto;
+  background-color: #1f2c34;
+  padding: 10px;
+  box-shadow: none;
+}
+
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+  color: #ff3366;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.search-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #e1e8ed;
+  font-size: 16px;
+  outline: none;
+  color: white;
+}
+
+
+
+.user-list .mat-list-item {
+  align-items: normal;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.user-list .mat-list-item:hover {
+  background-color: #263238;
+}
+
+
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: bold;
+  color: white;
+}
+
+.user-email {
+  color: #657786;
+}
+
+.title {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #657786;
+  transition: color 0.3s ease;
+}
+
+.user-details:hover .user-name {
+  color: #ff3366;
+}
+
+.user-details:hover .user-email {
+  color: #ff3366;
+}
+
+
+
+
+
+
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #e1e8ed;
+  color: white;
+}
+
+
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.user-email {
+  color: #657786;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.user-item:hover .user-name {
+  color: #ff3366;
+}
+
+.user-item:hover .user-email {
+  color: #ff3366;
+}
