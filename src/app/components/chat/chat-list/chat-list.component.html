@@ -1,0 +1,14 @@
+<mat-list>
+    <mat-list-item *ngFor="let chat of chats" (click)="selectChat(chat)">
+        <div class="chat-container">
+            <img [src]="getOtherUserProfileImage(chat)" alt="Profile image">
+            <div class="chat-info">
+                <div class="header-info">
+                    <h4>{{ getUserDisplayName(chat) }}</h4>
+                    <div class="time">{{ getLastMessageTime(chat) }}</div>
+                </div>
+                <p class="last-message">{{ getLastMessageContent(chat) }}</p>
+            </div>
+        </div>
+    </mat-list-item>
+</mat-list>

@@ -2,15 +2,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ApiService} from "../../service/api.service";
+
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/services/users/api.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register-student.component.html',
+  styleUrls: ['./register-student.component.css']
 })
-export class RegisterComponent {
+export class RegisterStudentComponent implements OnInit {
   registerForm!: FormGroup;
   colleges!: any[]; // Arreglo para almacenar la lista de colleges obtenidos de la API
   careers!: any[]; // Arreglo para almacenar la lista de careers obtenidos de la API
