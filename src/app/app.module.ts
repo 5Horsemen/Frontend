@@ -6,6 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './views/login/login.component';
+import {RegisterStudentComponent} from "./views/registers/register-student/register-student.component";
+import {RegisterEmployerComponent} from "./views/registers/register-employer/register-employer.component";
+import { LayoutComponent } from './layout/layout/layout.component';
+import { DialogChangeEmailComponent } from './components/dialog-change-email/dialog-change-email.component';
+import { DialogChangePasswordComponent } from './components/dialog-change-password/dialog-change-password.component';
+import { DialogSignOffComponent } from './components/dialog-sign-off/dialog-sign-off.component';
+import {MaterialModule} from "./shared/material.module";
 import { RegisterStudentComponent } from "./views/registers/register-student/register-student.component";
 import { RegisterEmployerComponent } from "./views/registers/register-employer/register-employer.component";
 import { ChatHeaderComponent } from './components/chat/chat-header/chat-header.component';
@@ -32,6 +39,10 @@ import { UserSearchDialogComponent } from './components/chat/user-search-dialog/
     RegisterEmployerComponent,
     ProfileComponent,
     LoginComponent,
+    LayoutComponent,
+    DialogChangeEmailComponent,
+    DialogChangePasswordComponent,
+    DialogSignOffComponent
     ChatHeaderComponent,
     ChatListComponent,
     ChatListHeaderComponent,
@@ -40,15 +51,16 @@ import { UserSearchDialogComponent } from './components/chat/user-search-dialog/
     MessageBubbleComponent,
     MessageInputComponent,
     UserSearchDialogComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
     CommonModule,
-
     MatMenuModule,
     HttpClientModule,
     PickerModule,
@@ -63,6 +75,7 @@ import { UserSearchDialogComponent } from './components/chat/user-search-dialog/
       }
     }),
     ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
