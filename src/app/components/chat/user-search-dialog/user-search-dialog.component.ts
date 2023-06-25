@@ -1,11 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { User } from 'src/app/models/user.model';
 import { MatDialogRef } from '@angular/material/dialog';
-
-
 import { debounceTime, switchMap } from 'rxjs/operators';
-import { UserService } from 'src/app/service/user.service';
+import { UserDto } from 'src/app/models/users/user-dto.model';
+import { UserService } from 'src/app/services/users/user.service';
+
 
 @Component({
   selector: 'app-user-search-dialog',
@@ -14,7 +13,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UserSearchDialogComponent implements OnInit {
   searchControl = new FormControl();
-  users!: User[];
+  users!: UserDto[];
 
   constructor(private userService: UserService, public dialogRef: MatDialogRef<UserSearchDialogComponent>) { }
 
@@ -25,7 +24,7 @@ export class UserSearchDialogComponent implements OnInit {
     ).subscribe(users => this.users = users);
   }
 
-  selectUser(user: User) {
+  selectUser(user: UserDto) {
     this.dialogRef.close(user);
   }
 

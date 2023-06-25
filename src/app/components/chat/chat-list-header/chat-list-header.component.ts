@@ -1,11 +1,12 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dialog.component';
-import { User } from 'src/app/models/user.model';
+
 import { MatDialog } from '@angular/material/dialog';
 import { CreatePrivateChatDto } from 'src/app/models/chat/create-private-chat-dto';
 import { PrivateChatDto } from 'src/app/models/chat/private-chat-dto.model';
-import { PrivateChatService } from 'src/app/service/private-chat/private-chat.service';
-import { AuthService } from 'src/app/service/auth.service';
+import { UserDto } from 'src/app/models/users/user-dto.model';
+import { PrivateChatService } from 'src/app/services/private-chat/private-chat.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-chat-list-header',
@@ -24,7 +25,7 @@ export class ChatListHeaderComponent {
   createNewMessage(): void {
     const dialogRef = this.dialog.open(UserSearchDialogComponent);
 
-    dialogRef.afterClosed().subscribe((selectedUser: User) => {
+    dialogRef.afterClosed().subscribe((selectedUser: UserDto) => {
       const userId = this.authService.getUserIdFromToken();
 
       if (selectedUser && userId) {

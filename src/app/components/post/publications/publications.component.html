@@ -1,0 +1,143 @@
+<app-create-publication></app-create-publication>
+
+<div *ngFor="let post of postDtos">
+    <mat-card class="post-card">
+        <div class="post">
+            <div class="profile-pic">
+                <img [src]="postCreators.profileImage" alt="Profile Picture">
+            </div>
+            <div class="author">
+                <mat-card-title>{{ postCreators.name }} {{ postCreators.lastName }}</mat-card-title>
+                <div class="career">
+                    <mat-card-subtitle *ngIf="postCreators.role === 'STUDENT'">{{ postCreators.student.career
+                        }}</mat-card-subtitle>
+                    <mat-card-subtitle *ngIf="postCreators.role === 'EMPLOYER'">{{ postCreators.employer.jobPosition
+                        }}</mat-card-subtitle>
+
+
+                </div>
+                <div class="college">
+                    <mat-card-subtitle *ngIf="postCreators.role === 'STUDENT'">{{ postCreators.student.college
+                        }}</mat-card-subtitle>
+                    <mat-card-subtitle *ngIf="postCreators.role === 'EMPLOYER'">{{ postCreators.employer.companyName
+                        }}</mat-card-subtitle>
+                </div>
+                <div class="published-date">
+                    {{post.createdDate | displayDate}}
+                    <mat-icon>people</mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+            <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" class="post-image">
+        </div>
+        <div class="post-actions">
+            <div class="left-actions">
+                <div class="action">
+                    <mat-icon>thumb_up</mat-icon>
+                    <span>{{ post.likes }}</span>
+                </div>
+            </div>
+            <div class="right-actions">
+                <div class="action">
+                    <mat-icon>comment</mat-icon>
+                    <span>{{ post.comments }}</span>
+                </div>
+                <div class="action">
+                    <mat-icon>share</mat-icon>
+                    <span>{{ post.shares }}</span>
+                </div>
+            </div>
+        </div>
+
+        <mat-divider class="custom-divider"></mat-divider>
+
+        <div class="post-actions">
+            <div class="action-button">
+                <button mat-button class="menu-button" (click)="toggleLike(post)" [class.clicked]="post.likes">
+                    <mat-icon [ngClass]="{'like-icon': true, 'blue': post.likes}">thumb_up</mat-icon>
+                    <span [ngStyle]="{ color: post.likes ? 'blue' : 'inherit' }">Like</span>
+                </button>
+            </div>
+            <div class="action-button">
+                <button mat-button class="menu-button" (click)="toggleCommentArea(post)">
+                    <mat-icon>chat_bubble_outline</mat-icon>
+                    <span>Comment</span>
+                </button>
+            </div>
+            <div class="action-button">
+                <button mat-button class="menu-button">
+                    <mat-icon>share</mat-icon>
+                    <span>Share</span>
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="commentAreaVisibility[post.id]">
+            <mat-divider class="custom-divider"></mat-divider>
+            <div class="post-actions">
+                <div class="profile-pic">
+                    <img [src]="" alt="Profile Picture">
+                </div>
+                <div class="input-wrapper">
+                    <div class="comment-input">
+                        <form class="example-form" (ngSubmit)="addComment(post, message.value)"
+                            enctype="multipart/form-data">
+
+                            enctype="multipart/form-data">
+                            <mat-form-field class="example-full-width">
+                                <input matInput #message placeholder="Write a comment..." required>
+                                <img *ngIf="selectedPhoto" [src]="selectedPhoto" alt="Selected Photo"
+                                    class="selected-photo">
+
+                                <div class="selected-photo-container" *ngIf="selectedPhoto">
+                                    <button mat-icon-button class="remove-button" (click)="clearSelectedPhoto()">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                    <img [src]="selectedPhoto" alt="Selected Photo" class="selected-photo">
+                                </div>
+                            </mat-form-field>
+                            <div class="input-icons">
+                                <button mat-icon-button type="submit">
+                                    <mat-icon>sentiment_very_satisfied</mat-icon>
+                                </button>
+                                <button mat-icon-button type="button" (click)="selectPhoto()">
+                                    <mat-icon>camera_alt</mat-icon>
+                                </button>
+                                <button mat-icon-button type="submit">
+                                    <mat-icon>send</mat-icon>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngFor="let comment of post.comments" class="comment-card">
+                <div class="profile-pic">
+                    <img [src]="" alt="Profile Picture">
+                </div>
+                <mat-card class="comment-card-cont">
+                    <div class="comment-card-header">
+                        <div class="comment-author">
+                            <mat-card-title>{{ comment.user.name }}</mat-card-title>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>{{ comment.content }}</p>
+                    </div>
+                </mat-card>
+                <div class="comment-actions">
+                    <button mat-icon-button>
+                        <mat-icon>thumb_up</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>chat_bubble_outline</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,310 @@
+/* Estilos generales */
+.create-publication-card {
+  max-width: 800px;
+  margin: 30px;
+  background-color: rgb(47, 47, 49);
+  border-radius: 15px;
+  position: relative; /* Agregamos una posición relativa al card */
+}
+
+.user-profile {
+  display: flex;
+  align-items: flex-start; /* Alinear al inicio */
+  padding: 16px 16px 8px; /* Agregar espacio superior e inferior */
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.mat-divider {
+  margin: 16px 16px; /* Ajustar el margen superior e inferior */
+  background: #545353;
+}
+
+.DatoInput {
+  background: #484848;
+  flex-grow: 1; /* Permitir que el botón se expanda */
+  margin-left: 8px; /* Agregar un margen izquierdo */
+  margin-right: 16px; /* Ajustar el margen derecho */
+  padding: 8px; /* Agregar un relleno interno */
+}
+
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px; /* Ajustar el espacio interno */
+  margin-bottom: 16px; /* Eliminar el margen inferior */
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-top: 8px;
+  color: #e4e6eb;
+}
+
+.example-disabled {
+  display: inline-block;
+}
+
+.LiveVideo {
+  color: #f35369;
+}
+
+.PhotoVideo {
+  color: #45bd62;
+}
+
+.feeling {
+  color: hsl(40, 89%, 52%);
+}
+
+.add-image .image-button {
+  color: #45bd62;
+}
+.add-image .person-button {
+  color: #2b6ad2;
+}
+.add-image .feeling-button {
+  color: hsl(40, 89%, 52%);
+}
+.add-image .place-button {
+  color: #f35369;
+}
+
+.example-button-row button:hover,
+.example-button-row a:hover {
+  background-color: rgba(
+    101,
+    103,
+    102,
+    0.94
+  ); /* Cambia el color de fondo al verde deseado */
+}
+
+/*CSS contenido de la publicación*/
+
+.publication-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.publication-card {
+  background-color: rgb(47, 47, 49);
+  width: 450px;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 10000;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  color: #ffffff;
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+}
+
+.close-button {
+  margin-left: auto;
+  background: #525151;
+  background: rgba(107, 106, 107, 0.29);
+}
+
+.close-button:hover {
+  background: #757575;
+}
+
+.card-body {
+  margin-top: 20px;
+}
+
+.card-body textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  margin-top: 10px;
+  overflow: auto;
+  word-wrap: break-word;
+  resize: none;
+  min-height: 80px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  transition: font-size 0.2s ease-in-out; /* Agregamos una transición suave para el cambio de tamaño de letra */
+}
+
+.card-body textarea:focus {
+  font-size: 1.3rem; /* Tamaño de letra reducido cuando el textarea está en foco */
+}
+
+.card-body textarea::placeholder {
+  color: #c0c0c0;
+  opacity: 0.7;
+}
+
+.card-body textarea:valid {
+  font-size: 1.2rem; /* Tamaño de letra reducido cuando hay texto válido ingresado */
+}
+
+.card-body textarea::placeholder {
+  color: #c0c0c0;
+  opacity: 0.7;
+}
+
+.image-button {
+  margin-right: 10px;
+}
+
+.card-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.publish-button {
+  border-radius: 5px;
+  background-color: #3578e5;
+  color: #ffffff;
+  width: 100%;
+}
+
+.publish-button[disabled] {
+  background-color: #5e5d5d;
+  cursor: not-allowed;
+}
+
+.add-image {
+  border: 1px solid #5e5d5d;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.add-image span {
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.remove-button {
+  color: #b6b3b3;
+  background: #504f4f;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-body {
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.add-image {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-button,
+.person-button,
+.place-button,
+.feeling-button {
+  margin-right: 5px;
+}
+
+.selected-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.selected-image {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.selected-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.remove-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.publish-button {
+  padding: 5px 20px;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 600px) {
+  .example-button-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin-bottom: 0; /* Eliminar el margen inferior */
+  }
+
+  .example-button-row button,
+  .example-button-row a {
+    margin-top: 8px;
+    color: #e4e6eb;
+  }
+
+  .DatoInput {
+    bottom: 16px;
+    left: 56px; /* Ajustamos el margen izquierdo para alinearlo con la foto de perfil */
+    right: 16px;
+    width: calc(
+      100% - 72px
+    ); /* Ajustamos el ancho para que no choque con los bordes */
+    position: static; /* Volvemos a la posición estática para que el botón se mantenga en línea */
+    margin-top: 8px; /* Agregamos un margen superior para separarlo de la foto de perfil */
+  }
+
+  .create-publication-card {
+    padding-bottom: 16px; /* Eliminar el relleno inferior */
+  }
+}

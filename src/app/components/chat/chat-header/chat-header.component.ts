@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PrivateChatDto } from 'src/app/models/chat/private-chat-dto.model';
-import { User } from 'src/app/models/user.model';
+import { UserDto } from 'src/app/models/users/user-dto.model';
+
 
 @Component({
   selector: 'app-chat-header',
@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./chat-header.component.css']
 })
 export class ChatHeaderComponent {
-  @Input() displayedUser!: User | null;
+  @Input() displayedUser!: UserDto | null;
 
   getProfilePicture(): string {
     return this.displayedUser ? this.displayedUser.profileImage : '';
