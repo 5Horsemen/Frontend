@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from 'src/app/services/users/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -56,7 +57,7 @@ export class RegisterStudentComponent implements OnInit {
       return;
     }
 
-    const registerUrl = 'https://webservices-production-b2b7.up.railway.app/api/v1/account/register/student';
+    const registerUrl = environment.baseURL + '/api/v1/account/register/student';
 
     const requestData = {
       student: {
